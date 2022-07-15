@@ -119,6 +119,11 @@ public:
         return;
     }
 
+    VectorView(std::vector<T>& rhs) {
+        VectorView  vw(&*(rhs.begin()), &*(rhs.end()));
+        swap(vw);
+    }
+
     VectorView &operator= (std::vector<T> &rhs)  {
 
         VectorView  vw(&*(rhs.begin()), &*(rhs.end()));
